@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>ajax</title>
+    </head>
+    <body>
+        <script src="ajax.js"></script>
+        <script>
+            var data = {};
+            
+            xhr("GET", "http://jsonplaceholder.typicode.com/posts/1").then(function (response) {
+                console.log(JSON.parse(response.target.response));
+            });
+            
+            request("http://jsonplaceholder.typicode.com/posts/1").json(function (data) { 
+                console.log(data); 
+            });
+            
+            request("http://jsonplaceholder.typicode.com/posts/1").text(function (data) { 
+                console.log(data); 
+            });
+            
+            request("http://jsonplaceholder.typicode.com/posts/1").send(data);
+        </script>
+    </body>
+</html>
